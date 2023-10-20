@@ -6,7 +6,7 @@ import {
   StyledForm,
   StyledInput,
   StyledWrapper,
-} from './ContactFormStyled';
+} from './ContactFormStyled.js';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
