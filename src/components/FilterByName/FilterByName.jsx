@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledDesc, StyledFilter, StyledInput } from './FilterByNameStyled';
+import { StyledDesc, StyledFilter, StyledInput } from './FilterByNamestyled';
 
 const FilterByName = ({ onFilterChange, filterValue }) => {
   return (
