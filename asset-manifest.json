@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.6071436f.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.28fe4373.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.b2ca5d89.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.50f869f6.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.6071436f.css.map": "/goit-react-hw-08-phonebook/static/css/main.6071436f.css.map",
-    "main.28fe4373.js.map": "/goit-react-hw-08-phonebook/static/js/main.28fe4373.js.map"
+    "static/media/logout-multimedia-ui-svgrepo-com.svg": "/goit-react-hw-08-phonebook/static/media/logout-multimedia-ui-svgrepo-com.6f34d7d0efd0f80342aa7504ded618b5.svg",
+    "static/media/user-circle-svgrepo-com.svg": "/goit-react-hw-08-phonebook/static/media/user-circle-svgrepo-com.54d20f6310516672bd4cc909b349e406.svg",
+    "static/media/remove-bookmark-svgrepo-com.svg": "/goit-react-hw-08-phonebook/static/media/remove-bookmark-svgrepo-com.c6340044aa3c47048a9fa7a386667469.svg",
+    "static/media/arrow-up-short-wide-svgrepo-com.svg": "/goit-react-hw-08-phonebook/static/media/arrow-up-short-wide-svgrepo-com.6ba284380262ce6e61a54a6d86f52234.svg",
+    "main.b2ca5d89.css.map": "/goit-react-hw-08-phonebook/static/css/main.b2ca5d89.css.map",
+    "main.50f869f6.js.map": "/goit-react-hw-08-phonebook/static/js/main.50f869f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.6071436f.css",
-    "static/js/main.28fe4373.js"
+    "static/css/main.b2ca5d89.css",
+    "static/js/main.50f869f6.js"
   ]
 }
