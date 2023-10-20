@@ -1,67 +1,67 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { ButtonForm, Form, Input, LabelForm } from './ContactFormStyled';
+import { useState } from 'react';
+import { StyledDesc } from '../../styles/App.styled';
+import {
+  StyledButton,
+  StyledContactTitle,
+  StyledForm,
+  StyledInput,
+  StyledWrapper,
+} from './ContactFormStyled';
 
-export const ContactForm = ({ addContact }) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { addContactThunk } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+
+export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const contacts = useSelector(selectContacts);
+  const dispatch = useDispatch();
 
-  const handleOnInput = eve => {
-    switch (eve.target.name) {
-      case 'name':
-        setName(eve.target.value);
-        break;
-      case 'number':
-        setNumber(eve.target.value);
-        break;
-      default:
-        break;
-    }
-  };
-
-  const onSubmit = eve => {
-    eve.preventDefault();
-    addContact({ name, number });
+  const handleSubmit = e => {
+    e.preventDefault();
+    const findByName = contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+    if (!findByName) {
+      dispatch(addContactThunk({ name, number }));
+    } else toast.error(`${findByName.name} is already in contacts`);
     setName('');
     setNumber('');
   };
 
   return (
-    <>
-      <Form onSubmit={onSubmit}>
-        <LabelForm htmlFor="name">
-          Name
-          <Input
-            id="name"
-            type="text"
-            name="name"
-            pattern="^[\p{L}' ]+$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-            onChange={handleOnInput}
-            value={name}
-          />
-        </LabelForm>
-        <LabelForm htmlFor="number">
-          Number
-          <Input
-            id="number"
-            type="tel"
-            name="number"
-            pattern="^\+380\d{9}$"
-            title="Phone number must be like +380*********"
-            placeholder="+38**********"
-            required
-            onChange={handleOnInput}
-            value={number}
-          />
-        </LabelForm>
-        <ButtonForm type="submit">Add contact</ButtonForm>
-      </Form>
-    </>
+    <StyledForm onSubmit={handleSubmit}>
+      <StyledContactTitle>Enter contact data</StyledContactTitle>
+      <StyledWrapper>
+        <StyledDesc>Name</StyledDesc>
+        <StyledInput
+          type="text"
+          name="name"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required
+          value={name}
+          onChange={e => setName(e.target.value)}
+          placeholder="Name"
+        />
+      </StyledWrapper>
+      <StyledWrapper>
+        <StyledDesc>Phone number</StyledDesc>
+        <StyledInput
+          type="tel"
+          name="number"
+          // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          required
+          value={number}
+          onChange={e => setNumber(e.target.value)}
+          placeholder="XXX-XXX-XXXX"
+        />
+      </StyledWrapper>
+
+      <StyledButton type="submit">Add Contact</StyledButton>
+    </StyledForm>
   );
 };
 
-ContactForm.propTypes = {
-  addContact: PropTypes.func.isRequired,
-};
+export default ContactForm;

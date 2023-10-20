@@ -1,19 +1,26 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
-import './index.css';
-
-import { App } from 'App';
+import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 import { store } from 'redux/store';
+import { persistor } from 'redux/store.js';
+import App from './components/App';
+import './index.css';
+import { ThemeProvider } from 'styled-components';
+import { theme } from 'styles/theme';
+import { ToastContainer } from 'react-toastify';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <Provider store={store}>
-      
-        <App />
-      
-      <ToastContainer autoClose={1500} />
-    </Provider>
+    <BrowserRouter basename="/goit-react-hw-08-phonebook">
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+          </PersistGate>
+        </Provider>
+      </ThemeProvider>
+    </BrowserRouter>
+    <ToastContainer autoClose={1500} />
   </>
 );

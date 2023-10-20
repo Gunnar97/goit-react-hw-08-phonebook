@@ -1,48 +1,49 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
-export const ContactsList = styled.ul`
+export const StyledContactsList = styled.ul`
+  width: 80%;
+`;
+
+export const StyledContactLi = styled.li`
+  list-style: none;
+
+  display: flex;
+  text-align: center;
+  align-items: flex-end;
+  margin-bottom: 8px;
+`;
+
+export const StyledSpan = styled.span`
+  margin-right: auto;
+`;
+export const StyledBtnDelete = styled.button`
+  background-color: transparent;
+  border: none;
+`;
+export const StyledUpSpan = styled.div`
+  font-size: 26px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  place-items: center;
+  :hover,
+  :focus {
+    color: ${props => props.theme.colors.black};
+    font-weight: ${props => props.theme.fontWeights.bold};
+    transform: scale(1.05);
+  }
+`;
+
+export const StyledContacts = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 80%;
-  padding: 16px;
-  color: black;
-  font-weight: 700;
-`;
-
-export const ContactsItem = styled.li`
-  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
-  background: fff;
-  color: 000;
-  border-right: 1px solid #bd7c2f;
-  width: 100%;
-  float: left;
-  padding: 20px 15px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-`;
-
-export const ButtonDel = styled.button`
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #fff;
+  margin: 0 auto;
+  max-width: 450px;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 19px;
+  box-shadow: -1px 15px 30px -12px black;
+  padding: 24px 0;
   text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  background-color: #0d6efd;
-  border: 1px solid #0d6efd;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  border-radius: 0.25rem;
-  transition: background-color 0.15s ease-in-out;
 `;

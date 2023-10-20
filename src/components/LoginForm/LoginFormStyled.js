@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledFilter = styled.div`
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 32px auto 32px;
+  margin: 32px auto 0;
   max-width: 450px;
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
@@ -17,6 +18,7 @@ export const StyledFilter = styled.div`
 
 export const StyledInput = styled.input`
   width: 75%;
+  margin-bottom: 8px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #023047;
@@ -28,13 +30,23 @@ export const StyledInput = styled.input`
     border-color: #ffb703;
   }
 `;
-export const StyledDesc = styled.label`
-  margin: 1em 0 0.5em 0;
-  color: #343434;
-  font-weight: normal;
-  font-family: 'Ultra', sans-serif;
-  font-size: 28px;
-  line-height: 42px;
-  text-transform: uppercase;
-  text-shadow: 0 2px white, 0 3px #777;
+
+export const StyledButton = styled.button`
+  background-color: #ffb703;
+  margin-top: 12px;
+  color: #023047;
+  border: none;
+  border-radius: 6px;
+  width: 35%;
+  height: 40px;
+  font-size: 1.2rem;
+`;
+
+export const StyledLink = styled(Link)`
+  color: #ffb703;
+`;
+
+export const StyledError = styled.p`
+  font-size: 0.5rem;
+  margin: 0;
 `;

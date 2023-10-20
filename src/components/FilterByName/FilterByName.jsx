@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FindeForm, FindeInput, FindeLabel } from './FilterByNamestyled';
+import { StyledDesc, StyledFilter, StyledInput } from './FilterByNameStyled';
 
 const FilterByName = ({ onFilterChange, filterValue }) => {
   return (
-    <FindeForm>
-      <FindeLabel htmlFor="contact-filter">
+    <StyledFilter>
+      <StyledDesc className="filter-label" htmlFor="contact-filter">
         Find contact by name
-        <FindeInput
+        <StyledInput
           onChange={onFilterChange}
           name="filter"
           id="contact-filter"
           filter={filterValue}
-        ></FindeInput>
-      </FindeLabel>
-    </FindeForm>
+        ></StyledInput>
+      </StyledDesc>
+    </StyledFilter>
   );
 };
 
 FilterByName.propTypes = {
-  onFilterChange: PropTypes.func.isRequired,
-  filterValue: PropTypes.string.isRequired,
+  onFilterChange: PropTypes.func,
+  filterValue: PropTypes.string,
 };
+
 export default FilterByName;
