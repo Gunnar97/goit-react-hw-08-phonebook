@@ -56,7 +56,7 @@ const App = () => {
           alignItems: 'center',
           justifyContent: 'center',
           bottom: 35,
-          background: '#023047',
+          background: '#fff',
           width: '35px',
           height: '35px',
           padding: '8px',

@@ -6,7 +6,6 @@ export const StyledHeadUser = styled.div`
   gap: 30px;
   align-items: flex-start;
   justify-content: center;
-  /* margin-left: 20px; */
 `;
 
 export const StyledUserInfo = styled.div`
@@ -15,7 +14,13 @@ export const StyledUserInfo = styled.div`
 `;
 
 export const StyledUserName = styled.h3`
-  color: #ffb703;
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Ultra', sans-serif;
+  font-size: 18px;
+  line-height: 42px;
+  text-transform: uppercase;
+  text-shadow: 0 2px white, 0 3px #777;
 `;
 
 export const StyledLogOut = styled(Link)`

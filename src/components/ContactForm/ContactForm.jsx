@@ -51,7 +51,7 @@ export const ContactForm = () => {
         <StyledInput
           type="tel"
           name="number"
-          // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           required
           value={number}
           onChange={e => setNumber(e.target.value)}

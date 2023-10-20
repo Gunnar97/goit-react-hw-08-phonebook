@@ -32,7 +32,7 @@ export const contactsSlice = createSlice({
       })
       .addCase(deleteContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items = state.contacts.items.filter(
-          item => item.id !== payload
+          item => item.id !== payload.id
         );
       })
 

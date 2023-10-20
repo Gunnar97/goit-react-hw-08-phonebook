@@ -14,6 +14,7 @@ export const registerThunk = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const register = await registerRequest(credentials);
+      console.log(credentials);
       setToken(register.token);
       toast.success('Congratulations! You have successfully registered!');
       return register;
